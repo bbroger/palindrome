@@ -1,0 +1,22 @@
+<ul class="breadcrumb">
+    <li><a href="#messages">Messages</a></li>
+    <li class="active">{{message.text}}</li>
+</ul>
+<div class="panel panel-default clearfix">
+    <div class="panel-body">
+        <div class="button-bar">
+            <button class="btn btn-warning" ng-click="edit()" ng-hide="editing">Edit <i class="fa fa-pencil-square-o"></i></button>
+            <button class="btn btn-success" ng-click="save()" ng-show="editing">Save <i class="fa fa-floppy-o"></i></button>
+            <button class="btn btn-danger" ng-click="cancel()" ng-show="editing">Cancel <i class="fa fa-ban"></i></button>
+            <button class="btn btn-danger" ng-click="delete()" ng-show="editing">Delete Message <i class="fa fa-trash-o"></i></button>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Message Text:</label>
+            <edit-in-line value="message.text" editing="editing" />
+        </div>
+        <div class="form-group">
+            <p ng-if="isPalindrome(message.text)" class="text-success"><i class="fa fa-check"></i> This message is a palindrome!</p>
+            <p ng-if="!isPalindrome(message.text)" class="text-danger"><i class="fa fa-times"></i> This message is not a palindrome!</p>
+        </div>
+    </div>
+</div>

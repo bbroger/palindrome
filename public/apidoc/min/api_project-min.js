@@ -1,0 +1,1 @@
+define({name:"palindrome",version:"1.0.0",description:"REST Api with a front-end UI to submit messages and verify if they are palindromes",apidoc:"0.2.0",sampleUrl:!1,generator:{name:"apidoc",time:"2016-07-10T12:24:14.284Z",url:"http://apidocjs.com",version:"0.16.1"}});

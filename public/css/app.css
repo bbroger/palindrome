@@ -1,0 +1,32 @@
+body {
+    background: url('/images/background.png'); /* Background pattern from http://subtlepatterns.com/dark-sharp-edges/ */
+    background-repeat: repeat;
+    min-width: 320px;
+}
+
+.message-list-item .panel-body {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.message-list-item .panel-body > * {
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+
+.message-list-item .panel-body .btn {
+    margin-left: auto;
+}
+
+div.button-bar {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+div.form-offset {
+    padding-top: 15px;
+}
+
+.margin-top-reset {
+    margin-top: 0;
+}
