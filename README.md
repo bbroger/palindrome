@@ -42,11 +42,19 @@ npm run apidoc
 This will generate the docs into public/apidoc and thus make it available via http://server:3000/apidoc
 
 ## Testing
-This project comes with tests for x and y.
-### Running unit tests
+This project comes with tests for both the backend (node) and frontend (karma mocha).
+### Running all tests
 Tests can be run using
 ```
 npm run test
+```
+### Running backend tests only
+```
+npm run mochatest
+```
+### Running frontend tests only
+```
+npm run karmatest
 ```
 
 ## License
