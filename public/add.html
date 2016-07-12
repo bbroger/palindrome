@@ -6,7 +6,7 @@
                 <input type="text" class="form-control" id="newMessage" placeholder="Message text" ng-model="message.text" autocomplete="off"
                 />
             </div>
-            <button type="submit" class="btn btn-success" ng-click="add()" ng-disabled="!message.text"><i class="fa fa-plus"></i> Add new Message</button>
+            <button type="submit" class="btn btn-success" ng-click="add()" ng-disabled="addDisabled()"><i class="fa fa-plus"></i> Add new Message</button>
             <p ng-if="isPalindrome(message.text)" class="text-success"><i class="fa fa-check"></i> This message is a palindrome!</p>
             <p ng-if="message.text && !isPalindrome(message.text)" class="text-danger"><i class="fa fa-times"></i> This message is not a palindrome!</p>
         </form>

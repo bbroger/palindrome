@@ -10,15 +10,11 @@ module.exports = function (config) {
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['mocha', 'chai'],
-
+        frameworks: ['angular','mocha', 'chai'],
 
         // list of files / patterns to load in the browser
-        files: ['http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.js',
-            'http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.25/angular-mocks.js',
-            'http://code.angularjs.org/1.2.25/angular-route.js',
-            'http://code.angularjs.org/1.2.25/angular-resource.js',
-            'public/js/*.js',
+        files: [
+            'public/js/app.js',
             'public/js/test/*.js'
         ],
 
@@ -69,5 +65,5 @@ module.exports = function (config) {
         // Concurrency level
         // how many browser should be started simultaneous
         concurrency: Infinity
-    })
-}
+    });
+};

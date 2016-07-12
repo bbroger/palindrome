@@ -115,6 +115,9 @@ app.controller('MessageCtrl', ['$scope', '$routeParams', 'MessageService', '$rou
                 });
             }
         };
+        $scope.addDisabled = function () {
+            return !($scope.message && $scope.message.text && $scope.message.text.trim().length);
+        };
     }
 
     $scope.isPalindrome = isPalindrome;
