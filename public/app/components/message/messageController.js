@@ -2,6 +2,7 @@
 
 angular.module('app.message.controller', ['app.message.service'])
     .controller('MessageCtrl', ['$scope', '$routeParams', 'MessageService', '$route', '$location', function ($scope, $routeParams, service, $route, $location) {
+
         // if we have a messageId, we are viewing/editing an existing Message
         if ($routeParams.messageId) {
             service.get({
@@ -15,65 +16,64 @@ angular.module('app.message.controller', ['app.message.service'])
 
                 _handleError(response, $location);
             });
+        }
 
-            $scope.editing = false;
-
-            $scope.edit = function () {
-                $scope.editing = !$scope.editing;
-            };
-
-            $scope.save = function () {
-
-                service.update({
-                    messageId: $routeParams.messageId
-                }, $scope.message, function () {
-                    $scope.editing = !$scope.editing;
-                });
-            };
-
-            $scope.cancel = function () {
-                $route.reload();
-            };
-
-            $scope.delete = function () {
-                service.delete({
-                    messageId: $routeParams.messageId
-                }, function (data, headers) {
-                    $scope.message = data;
-                }, function (response) {
-                    if (response.status == 404) {
-                        $scope.pageIs404 = true;
+        $scope.add = function () {
+            if ($scope.message && $scope.message.text) {
+                var newMessage = {
+                    text: $scope.message.text,
+                    isPalindrome: isPalindrome($scope.message.text)
+                };
+                service.add(newMessage, function (data) {
+                    if (data) {
+                        $location.path("/messages/" + data.id); //redirect to newly created item
                     }
-
-                    _handleError(response, $location);
                 });
+            }
+        };
+        $scope.addDisabled = function () {
+            return !($scope.message && $scope.message.text && $scope.message.text.trim().length);
+        };
 
-                $location.path("/");
-            };
-        }
-        else { // no messageId = adding a new Message
-            $scope.add = function () {
-                if ($scope.message && $scope.message.text) {
-                    var newMessage = {
-                        text: $scope.message.text,
-                        isPalindrome: isPalindrome($scope.message.text)
-                    };
-                    service.add(newMessage, function (data) {
-                        if (data) {
-                            $location.path("/messages/" + data.id); //redirect to newly created item
-                        }
-                    });
+        $scope.editing = false;
+
+        $scope.edit = function () {
+            $scope.editing = !$scope.editing;
+        };
+
+        $scope.save = function () {
+
+            service.update({
+                messageId: $routeParams.messageId
+            }, $scope.message, function () {
+                $scope.editing = !$scope.editing;
+            });
+        };
+
+        $scope.cancel = function () {
+            $route.reload();
+        };
+
+        $scope.delete = function () {
+            service.delete({
+                messageId: $routeParams.messageId
+            }, function (data, headers) {
+                $scope.message = data;
+            }, function (response) {
+                if (response.status == 404) {
+                    $scope.pageIs404 = true;
                 }
-            };
-            $scope.addDisabled = function () {
-                return !($scope.message && $scope.message.text && $scope.message.text.trim().length);
-            };
-        }
+
+                _handleError(response, $location);
+            });
+
+            $location.path("/");
+        };
 
         $scope.isPalindrome = isPalindrome;
     }]);
 
-function _handleError(response, $location) {
+function _handleError(response, $location) { //LC TODO move this to a service
 
     switch (response.status) {
         case 404:
@@ -85,7 +85,7 @@ function _handleError(response, $location) {
     }
 }
 
-var isPalindrome = function (text) {
+var isPalindrome = function (text) { //LC TODO move this to a service
 
     if (!text) {
         return false;

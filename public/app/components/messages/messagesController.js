@@ -5,24 +5,9 @@ angular.module('app.messages.controller', ['app.message.service'])
 
         service.query(function (data, headers) {
             $scope.allMessages = data;
+            $scope.showFilter = false;
+            $scope.filter = "all";
 
-            switch ($location.path()) {
-                case "/palindromes":
-                    $scope.filter = "palindromes";
-                    $scope.showFilter = true;
-                    break;
-
-                case "/non-palindromes":
-                    $scope.filter = "nonpalindromes";
-                    $scope.showFilter = true;
-                    break;
-
-                default:
-                    $scope.filter = "all";
-                    //$scope.messages = data;
-                    $scope.showFilter = false;
-                    break;
-            }
             $scope.allFilteredMessages = filterMessages($scope.allMessages, $scope.filter);
 
             $scope.messages = [];

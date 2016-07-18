@@ -50,69 +50,6 @@ router.get('/messages', function (req, res, next) {
         res.json(results);
     });
 });
-/**
- * @api {get} /messages/ Request all palindrome messages
- * @apiName GetMessages
- * @apiGroup Message
- *
- *
- * @apiSuccess {Array} response List of messages
- * @apiSuccess {String} response.text Message text
- * @apiSuccess {boolean} response.isPalindrome True/false value if message is a palindrome
- * 
- * @apiSuccessExample {json} Success-Response
- * HTTP/1.1 200 OK
- * [
- * {
- * text: "amor roma",
- * isPalindrome: true},
- * {
- * text: "A car, a man, a maraca",
- * isPalindrome: true
- * }
- * ]
- */
-router.get('/palindromes', function (req, res, next) {
-    appMessages.getPalindromes(function (error, results) {
-        if (error) {
-            return next(error);
-        }
-
-        res.json(results);
-    });
-});
-
-/**
- * @api {get} /messages/ Request all non-palindrome messages
- * @apiName GetMessages
- * @apiGroup Message
- *
- *
- * @apiSuccess {Array} response List of messages
- * @apiSuccess {String} response.text Message text
- * @apiSuccess {boolean} response.isPalindrome True/false value if message is a palindrome
- * 
- * @apiSuccessExample {json} Success-Response
- * HTTP/1.1 200 OK
- * [
- * {
- * text: "Apple",
- * isPalindrome: false},
- * {
- * text: "Vehicle",
- * isPalindrome: false
- * }
- * ]
- */
-router.get('/non-palindromes', function (req, res, next) {
-    appMessages.getNonPalindromes(function (error, results) {
-        if (error) {
-            return next(error);
-        }
-
-        res.json(results);
-    });
-});
 
 /**
  * @api {get} /messages/:id Request Message information
