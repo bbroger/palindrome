@@ -1,3 +1,5 @@
+<div ng-include="'/app/components/message/add.html'">
+</div>
 <div class="panel panel-default message-list-item">
     <div class="panel-heading" ng-click="showFilter = !showFilter" role="button">
         Filter <i class="fa fa-filter"></i><span class="pull-right"><i ng-show="showFilter" class="glyphicon glyphicon-collapse-down"></i><i ng-show="!showFilter" class="glyphicon glyphicon-collapse-up"></i></span>
@@ -38,6 +40,4 @@
             class="pagination-sm" ng-change="pageChanged()" num-pages="numPages" boundary-link-numbers="true"></uib-pagination>
     </div>
 
-</div>
-<div ng-include="'/app/components/message/add.html'">
 </div>
