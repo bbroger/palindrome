@@ -23,8 +23,8 @@ var data = {
         },
         {
             id: "abcd12344",
-            text: "This is not a palindrome",
-            isPalindrome: false
+            text: "Amor roma",
+            isPalindrome: true
         }
     ]
 };

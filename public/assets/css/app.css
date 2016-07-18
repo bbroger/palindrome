@@ -1,5 +1,5 @@
 body {
-    background: url('/images/background.png'); /* Background pattern from http://subtlepatterns.com/dark-sharp-edges/ */
+    background: url('/assets/images/background.png'); /* Background pattern from http://subtlepatterns.com/dark-sharp-edges/ */
     background-repeat: repeat;
     min-width: 320px;
 }

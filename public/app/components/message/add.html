@@ -1,9 +1,9 @@
-<div class="panel panel-default clearfix" ng-controller="MessageCtrl">
+<div class="panel panel-default clearfix" ng-controller="MessageCtrl as message">
     <div class="panel-body">
         <form>
             <div class="form-group">
                 <label for="newMessage">New Message</label>
-                <input type="text" class="form-control" id="newMessage" placeholder="Message text" ng-model="message.text" autocomplete="off"
+                <input type="message.text" class="form-control" id="newMessage" placeholder="Message text" ng-model="message.text" autocomplete="off"
                 />
             </div>
             <button type="submit" class="btn btn-success" ng-click="add()" ng-disabled="addDisabled()"><i class="fa fa-plus"></i> Add new Message</button>

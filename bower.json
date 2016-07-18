@@ -1,0 +1,29 @@
+{
+  "name": "palindrome",
+  "description": "REST Api with a front-end UI to submit messages and verify if they are palindromes",
+  "main": "index.js",
+  "authors": [
+    "Louis-Philippe Labelle Cloutier"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "angular-resource": "^1.5.7",
+    "bootstrap": "^3.3.6",
+    "angular-mocks": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "angular-bootstrap": "^1.3.3",
+    "angular-touch": "^1.5.7"
+  }
+}

@@ -140,7 +140,7 @@ router.get('/messages/:messageId', function (req, res, next) {
         }
 
         if (!results) {
-            res.send(404);
+            return res.sendStatus(404);
         }
 
         res.json(results);
@@ -202,7 +202,7 @@ router.put('/messages/:messageId', function (req, res, next) {
             }
 
             if (!results) {
-                return res.send(404);
+                return res.sendStatus(404);
             }
 
             return res.json(results);
@@ -244,7 +244,7 @@ router.post('/messages', function (req, res, next) {
             }
 
             if (!results) {
-                return res.send(404);
+                return res.sendStatus(404);
             }
 
             return res.json(results);

@@ -15,7 +15,8 @@
                 "--nolazy"
             ],
             "env": {
-                "NODE_ENV": "development"
+                "NODE_ENV": "development",
+                "MONGO_URL": "mongodb://appuser:apppassword@ds017195.mlab.com:17195/palindrome"
             },
             "externalConsole": false,
             "sourceMaps": false,
