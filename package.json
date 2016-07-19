@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "REST Api with a front-end UI to submit messages and verify if they are palindromes",
   "main": "index.js",
+  "repository": "https://github.com/dotlou/palindrome",
   "scripts": {
     "test": "gulp test",
     "prestart": "npm install",
