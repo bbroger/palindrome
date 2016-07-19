@@ -6,13 +6,12 @@
     </div>
     <div ng-show="showFilter" class="panel-body">
         <form>
-            <input id="allMessageFilter" type="radio" value="all" ng-model="filter" ng-change="applyFilters()" />
+            <input id="allMessageFilter" type="radio" ng-value="{{filterTypes.ALL}}" ng-model="filter" ng-change="applyFilters()" />
             <label for="allMessageFilter"> All Messages</label><br>
-            <input id="palindromeFilter" type="radio" value="palindromes" ng-model="filter" ng-change="applyFilters()" />
+            <input id="palindromeFilter" type="radio" ng-value="{{filterTypes.PALINDROMES}}" ng-model="filter" ng-change="applyFilters()" />
             <label for="palindromeFilter"> Only Palindromes</label><br>
-            <input id="nonPalindromeFilter" type="radio" value="nonpalindromes" ng-model="filter" ng-change="applyFilters()" />
+            <input id="nonPalindromeFilter" type="radio" ng-value="{{filterTypes.NONPALINDROMES}}" ng-model="filter" ng-change="applyFilters()" />
             <label for="nonPalindromeFilter"> Only non-palindromes</label>
-            <!-- LC TODO have these set a $scope enum variable then in message in messages use a pipe -->
         </form>
     </div>
 </div>
@@ -25,7 +24,6 @@
                 <th class="col-xs-2"></th>
             </tr>
             <tr ng-repeat="message in messages">
-                <!-- LC TODO put the pipe here -->
                 <td class="col-xs-9">{{message.text}}</td>
                 <td ng-if="message.isPalindrome"><i class="fa fa-check text-success"></i></td>
                 <td class="col-xs-1" ng-if="!message.isPalindrome"><i class="fa fa-times text-danger"></i></td>

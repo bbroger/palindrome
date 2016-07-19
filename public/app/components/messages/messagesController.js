@@ -2,11 +2,16 @@
 
 angular.module('app.messages.controller', ['app.message.service'])
     .controller('MessagesCtrl', ['$scope', 'MessageService', '$location', function ($scope, service, $location) {
+        $scope.filterTypes = {
+            ALL: 0,
+            PALINDROMES: 1,
+            NONPALINDROMES: 2
+        };
 
         service.query(function (data, headers) {
             $scope.allMessages = data;
             $scope.showFilter = false;
-            $scope.filter = "all";
+            $scope.filter = $scope.filterTypes.ALL;
 
             $scope.allFilteredMessages = filterMessages($scope.allMessages, $scope.filter);
 
@@ -30,13 +35,13 @@ angular.module('app.messages.controller', ['app.message.service'])
             var filteredMessages;
 
             switch (filterType) {
-                case "palindromes":
+                case $scope.filterTypes.PALINDROMES:
                     filteredMessages = messages.filter(function (message) {
                         return message.isPalindrome;
                     });
                     break;
 
-                case "nonpalindromes":
+                case $scope.filterTypes.NONPALINDROMES:
                     filteredMessages = messages.filter(function (message) {
                         return !message.isPalindrome;
                     });
