@@ -6,11 +6,11 @@
     </div>
     <div ng-show="showFilter" class="panel-body">
         <form>
-            <input id="allMessageFilter" type="radio" value="all" ng-model="filter" ng-change="applyFilters(filter)" />
+            <input id="allMessageFilter" type="radio" value="all" ng-model="filter" ng-change="applyFilters()" />
             <label for="allMessageFilter"> All Messages</label><br>
-            <input id="palindromeFilter" type="radio" value="palindromes" ng-model="filter" ng-change="applyFilters(filter)" />
+            <input id="palindromeFilter" type="radio" value="palindromes" ng-model="filter" ng-change="applyFilters()" />
             <label for="palindromeFilter"> Only Palindromes</label><br>
-            <input id="nonPalindromeFilter" type="radio" value="nonpalindromes" ng-model="filter" ng-change="applyFilters(filter)" />
+            <input id="nonPalindromeFilter" type="radio" value="nonpalindromes" ng-model="filter" ng-change="applyFilters()" />
             <label for="nonPalindromeFilter"> Only non-palindromes</label>
             <!-- LC TODO have these set a $scope enum variable then in message in messages use a pipe -->
         </form>

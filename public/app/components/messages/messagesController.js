@@ -63,13 +63,13 @@ angular.module('app.messages.controller', ['app.message.service'])
             $scope.setPage($scope.currentPage);
         };
 
-        $scope.applyFilters = function (filterType) {
+        $scope.applyFilters = function () {
             $scope.allFilteredMessages = filterMessages($scope.allMessages, $scope.filter);
             $scope.setPage(1);
         };
     }]);
 
-function _handleError(response, $location) {
+function _handleError(response, $location) { //LC TODO move _handleError to a service
 
     switch (response.status) {
         case 404:
