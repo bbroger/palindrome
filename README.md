@@ -3,7 +3,7 @@ The palindrome application is a MEAN stack application with a REST API and an an
 ---
 
 ## Online demo
-A demo of the application is availabe [here](http://54.210.218.167/).
+A demo of the application is available [here](http://54.210.218.167/).
 ## Getting started
 
 ### Prerequisites
