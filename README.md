@@ -1,5 +1,9 @@
-# Palindrome - REST Api with a front-end UI to submit messages and verify if they are palindromes
+# Palindrome
+The palindrome application is a MEAN stack application with a REST API and an angular front-end to submit messages and verify if they are palindromes
+---
 
+## Online demo
+A demo of the application is availabe [here](http://54.210.218.167/).
 ## Getting started
 
 ### Prerequisites
@@ -16,7 +20,7 @@ docker build . -t dotlou/palindrome
 ```
 ### 2. Docker deployment
 ```
-docker run -d -it dotlou/palindrome -e "MONGO_URL='mongodb://your_connection_info'"
+docker run -d -it dotlou/palindrome -e "MONGO_URL='mongodb://your_connection_info'" --name palindrome_app
 ```
 This will run the server with the default port of 3000.
 
@@ -45,7 +49,7 @@ gulp
 ```
 
 ## API definition
-The full API definition is available at http://server:3000/apidoc
+The full API definition is available at http://server:3000/apidoc. A web version is available at [online](http://54.210.218.167/apidoc/).
 
 ### Generating a fresh copy of the api documentation
 The full API documentation gets generated for all definitions inside the routes/ folder. You can re-generate the docs like this:
