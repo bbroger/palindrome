@@ -22,8 +22,6 @@ describe('message controller', function () {
         };
         MessageService = _MessageService_;
 
-        //LC TODO rename MessageService to resource
-
         newMessageController = function (params) {
             if (!params) {
                 params = $routeParams; //use default
@@ -137,7 +135,7 @@ describe('message controller', function () {
             text: 'new text',
             isPalindrome: false
         };
-        $routeParams = { //LC TODO override this in test
+        $routeParams = {
             messageId: message.messageId
         };
         var messageController = newMessageController($routeParams);
