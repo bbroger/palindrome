@@ -3,7 +3,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var Server = require('karma').Server;
 
 function onError(err) {
-console.log(err);
+    console.log(err);
 }
 gulp.task('default', function () {
     return gulp.src('styles/*.css')
@@ -18,18 +18,18 @@ gulp.task('default', function () {
  * Run test once and exit
  */
 gulp.task('test', function (done) {
-  new Server({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: true
-  }, done).start();
+    new Server({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+    }, done).start();
 });
 
 /**
  * Run test everytime files change
  */
 gulp.task('testwatch', function (done) {
-  new Server({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: false
-  }, done).start();
+    new Server({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: false
+    }, done).start();
 });
