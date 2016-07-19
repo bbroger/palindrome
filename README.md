@@ -7,7 +7,7 @@ A demo of the application is available [here](http://54.210.218.167/).
 ## Getting started
 
 ### Prerequisites
-You will need to have node installed and docker as well if you choose to run this in a docker container.
+At minimum you will need to have node installed. You will need docker as well if you choose to run this in a docker container.
 
 ### Getting the source
 ```
@@ -36,27 +36,27 @@ This app assumes you have a mongo endpoint with a connection url defined at MONG
 npm run dbseed
 ```
 ### 4. Launch the webserver
-To server at the default 3000 port:
+To serve at the default 3000 port:
 ```
 npm start
 ```
 
 ### CSS autoprefixer
-There is a gulp task (set as default) to generate CSS prefixes so you don't need to worry about it. With this in mind, make all CSS changes to root/styles/\*.css and *_NOT_* to public/css/.
+There is a default gulp task to generate CSS browser-specific prefixes so you don't need to worry about it. With this in mind, make all CSS changes to root/styles/\*.css and *_NOT_* to public/css/.
 Once changes have been completed, run the following command to "compile" them with the prefixes:
 ```
 gulp
 ```
 
 ## API definition
-The full API definition is available at http://server:3000/apidoc. A web version is available at [online](http://54.210.218.167/apidoc/).
+The full API definition is available at http://your_server:3000/apidoc. A web version is available [here](http://54.210.218.167/apidoc/).
 
 ### Generating a fresh copy of the api documentation
 The full API documentation gets generated for all definitions inside the routes/ folder. You can re-generate the docs like this:
 ```
 npm run apidoc
 ```
-This will generate the full docs into public/apidoc and thus make it available via http://server:3000/apidoc
+This will generate the full docs into public/apidoc and thus make it available via http://your_server:3000/apidoc
 
 ## Testing
 This project comes with tests for both the backend (node) and frontend (angular).
