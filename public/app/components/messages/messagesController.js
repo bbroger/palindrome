@@ -31,7 +31,6 @@ angular.module('app.messages.controller', ['app.message.service'])
 
             switch (filterType) {
                 case "palindromes":
-
                     filteredMessages = messages.filter(function (message) {
                         return message.isPalindrome;
                     });
@@ -68,10 +67,6 @@ angular.module('app.messages.controller', ['app.message.service'])
             $scope.allFilteredMessages = filterMessages($scope.allMessages, $scope.filter);
             $scope.setPage(1);
         };
-
-
-
-        $scope.isPalindrome = isPalindrome;
     }]);
 
 function _handleError(response, $location) {
@@ -85,17 +80,3 @@ function _handleError(response, $location) {
             break;
     }
 }
-var isPalindrome = function (text) {
-
-    if (!text) {
-        return false;
-    }
-
-    text = text.replace(/[^\w]/g, ""); //remove all characters except a-z
-    text = text.toLowerCase();
-    if (text.length === 0) {
-        return false;
-    }
-
-    return text == text.split('').reverse().join('');
-};

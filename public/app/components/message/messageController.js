@@ -21,8 +21,7 @@ angular.module('app.message.controller', ['app.message.service'])
         $scope.add = function () {
             if ($scope.message && $scope.message.text) {
                 var newMessage = {
-                    text: $scope.message.text,
-                    isPalindrome: isPalindrome($scope.message.text)
+                    text: $scope.message.text
                 };
                 service.add(newMessage, function (data) {
                     if (data) {
@@ -42,8 +41,7 @@ angular.module('app.message.controller', ['app.message.service'])
         };
 
         $scope.save = function () {
-
-            service.update({
+            $scope.message = service.update({
                 messageId: $routeParams.messageId
             }, $scope.message, function () {
                 $scope.editing = !$scope.editing;
@@ -69,8 +67,6 @@ angular.module('app.message.controller', ['app.message.service'])
 
             $location.path("/");
         };
-
-        $scope.isPalindrome = isPalindrome;
     }]);
 
 function _handleError(response, $location) { //LC TODO move this to a service
@@ -84,18 +80,3 @@ function _handleError(response, $location) { //LC TODO move this to a service
             break;
     }
 }
-
-var isPalindrome = function (text) { //LC TODO move this to a service
-
-    if (!text) {
-        return false;
-    }
-
-    text = text.replace(/[^\w]/g, ""); //remove all characters except a-z
-    text = text.toLowerCase();
-    if (text.length === 0) {
-        return false;
-    }
-
-    return text == text.split('').reverse().join('');
-};

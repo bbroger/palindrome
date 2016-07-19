@@ -141,7 +141,6 @@ router.put('/messages/:messageId', function (req, res, next) {
             if (!results) {
                 return res.sendStatus(404);
             }
-
             return res.json(results);
         });
     });
