@@ -69,6 +69,7 @@ describe('Messages', function () {
                 done();
             });
     });
+    //LC TODO test DELETE
 
 });
 
