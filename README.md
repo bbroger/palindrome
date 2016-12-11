@@ -2,8 +2,6 @@
 The palindrome application is a MEAN stack application with a REST API and an angular front-end to submit messages and verify if they are palindromes
 ---
 
-## Online demo
-A demo of the application is available [here](http://54.210.218.167/).
 ## Getting started
 
 ### Prerequisites
